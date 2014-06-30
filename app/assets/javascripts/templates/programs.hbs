@@ -1,0 +1,11 @@
+<ul>
+{{#each program in controller}}
+  <li>
+    {{#link-to 'program' program}}
+      {{program.name}}
+    {{/link-to}}
+  </li>
+{{/each}}
+</ul>
+
+{{outlet}}
