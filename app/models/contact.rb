@@ -1,3 +1,5 @@
 class Contact < ActiveRecord::Base
-  belongs_to :program
+  acts_as_tenant
+
+  # belongs_to :program
 end

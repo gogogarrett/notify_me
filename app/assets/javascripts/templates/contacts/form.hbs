@@ -2,12 +2,12 @@
 <form>
   <fieldset>
     <div>
-      <label {{bind-attr for="firstNameField.elementId"}}>First Name</label>
-      {{view Ember.TextField valueBinding='firstName' name='first_name' viewName='firstNameField'}}
+      <label {{bind-attr for="first_nameField.elementId"}}>First Name</label>
+      {{view Ember.TextField valueBinding='first_name' name='first_name' viewName='first_nameField'}}
     </div>
     <div>
-      <label {{bind-attr for='lastNameField.elementId'}}>Last Name</label>
-      {{view Ember.TextField valueBinding='lastName' name='last_name' viewName='lastNameField'}}
+      <label {{bind-attr for='last_nameField.elementId'}}>Last Name</label>
+      {{view Ember.TextField valueBinding='last_name' name='last_name' viewName='last_nameField'}}
     </div>
     <div>
       <label {{bind-attr for='emailField.elementId'}}>Email</label>

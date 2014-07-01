@@ -4,13 +4,17 @@ NotifyMe.ContactsNewController = Ember.ObjectController.extend
   actions:
     save: ->
       program = @get('controllers.program.content')
-      contact = @store.createRecord('contact', {
-        program: program,
-        first_name: @get('firstName'),
-        last_name: @get('lastName'),
-        email: @get('email'),
-        phone: @get('phone'),
-      })
 
-      contact.save().then (cc) =>
+      @content.setProperties
+        first_name: @get('first_name')
+        last_name: @get('last_name')
+        email: @get('email')
+        phone: @get('phone')
+        program: program
+
+      @content.save().then (c) =>
         @transitionToRoute('contacts', program)
+
+    cancel: ->
+      @content.deleteRecord()
+      @transitionToRoute('contacts')

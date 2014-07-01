@@ -5,7 +5,7 @@ NotifyMe.ProgramsNewController = Ember.ObjectController.extend
   actions:
     save: ->
       @content.save().then =>
-        @transitionToRoute('programs.show', @content)
+        @transitionToRoute('program', @content)
 
     cancel: ->
       @content.deleteRecord()
