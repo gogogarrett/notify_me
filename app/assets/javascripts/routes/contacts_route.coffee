@@ -1,3 +1,4 @@
 NotifyMe.ContactsRoute = Ember.Route.extend
   model: (params) ->
-    @modelFor('program').get('contacts')
+    @store.find('contact')
+    # @modelFor('program').get('contacts')

@@ -9,7 +9,7 @@ class ApplicationController < ActionController::API
   end
 
   def set_program_current_id
-    Program.current_id = 4
+    Program.current_id = 1
   end
 
 end

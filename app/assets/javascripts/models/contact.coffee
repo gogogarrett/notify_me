@@ -3,5 +3,5 @@ NotifyMe.Contact = DS.Model.extend
   last_name: DS.attr('string')
   email: DS.attr('string')
   phone: DS.attr('string')
-  program: DS.belongsTo('program')
+  # program: DS.belongsTo('program')
 
