@@ -1,5 +1,6 @@
 class Contact < ActiveRecord::Base
   acts_as_tenant
 
-  # belongs_to :program
+  has_many :groups, through: :contact_groups
+  has_many :contact_groups
 end

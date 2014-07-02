@@ -13,6 +13,7 @@ NotifyMe::Application.routes.draw do
 
   resources :programs, except: :edit, constraints: FormatTest.new(:json)
   resources :contacts, except: :edit, constraints: FormatTest.new(:json)
+  resources :groups, except: :edit, constraints: FormatTest.new(:json)
 
   get '*foo', :to => 'ember#index', constraints: FormatTest.new(:html)
   get '/', :to => 'ember#index', constraints: FormatTest.new(:html)

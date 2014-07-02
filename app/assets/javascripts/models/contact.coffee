@@ -3,5 +3,10 @@ NotifyMe.Contact = DS.Model.extend
   last_name: DS.attr('string')
   email: DS.attr('string')
   phone: DS.attr('string')
-  # program: DS.belongsTo('program')
 
+  groups: DS.hasMany('group', async: true)
+
+
+  fullName: (->
+    "#{@get('first_name')} #{@get('last_name')}"
+  ).property('first_name', 'last_name')

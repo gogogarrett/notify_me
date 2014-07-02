@@ -1,3 +1,4 @@
 NotifyMe.ContactsNewRoute = Ember.Route.extend
   model: (params) ->
-    @store.createRecord('contact')
+    group = @modelFor('group')
+    @store.createRecord('contact', {group: group})

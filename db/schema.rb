@@ -13,12 +13,25 @@
 
 ActiveRecord::Schema.define(version: 20140630091036) do
 
+  create_table "contact_groups", force: true do |t|
+    t.integer  "group_id"
+    t.integer  "contact_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "contacts", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "phone"
     t.string   "email"
     t.integer  "program_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

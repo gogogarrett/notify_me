@@ -4,6 +4,11 @@ class ContactsController < ApplicationController
     render json: Contact.visible
   end
 
+  def show
+    contact = Contact.find(params[:id])
+    render json: contact
+  end
+
   def create
     contact = Contact.new(contact_params)
 
