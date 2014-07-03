@@ -8,9 +8,20 @@
 
 program = Program.create(name: "blake", bio: "awesome")
 
-10.times do |i|
-  program.contacts.create(first_name: "Garrett-#{i+1}",
-                          last_name: "Heinlen-#{i+1}",
-                          email: "h@h.com",
-                          phone: '111-111-1111')
-end
+group = program.groups.create(name: "Group 1")
+group.contacts.create!(
+  first_name: "Garrett",
+  last_name: "Heinlen",
+  email: "heinleng@gmail.com",
+  phone: '555-555-5555',
+  program: program
+)
+
+group.contacts.create!(
+  first_name: "Jenny",
+  last_name: "Lee",
+  email: "jlee@gmail.com",
+  phone: '444-444-4444',
+  program: program
+)
+

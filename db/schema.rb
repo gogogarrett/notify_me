@@ -30,8 +30,22 @@ ActiveRecord::Schema.define(version: 20140630091036) do
     t.datetime "updated_at"
   end
 
+  create_table "group_messages", force: true do |t|
+    t.integer  "group_id"
+    t.integer  "message_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "groups", force: true do |t|
     t.string   "name"
+    t.integer  "program_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messages", force: true do |t|
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
