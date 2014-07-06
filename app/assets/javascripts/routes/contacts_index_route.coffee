@@ -1,3 +1,4 @@
 NotifyMe.ContactsIndexRoute = Ember.Route.extend
   model: (params) ->
-    @store.find('contact')
+    @modelFor('group').get('contacts')
+    # @store.find('contact')

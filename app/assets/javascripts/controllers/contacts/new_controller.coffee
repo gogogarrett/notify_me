@@ -3,30 +3,21 @@ NotifyMe.ContactsNewController = Ember.ObjectController.extend
 
   actions:
     save: ->
-      # group = @get('controllers.group.content')
+      group = @get('controllers.group.content')
+
+      console.log group
 
       contact = @content.setProperties
         first_name: @get('first_name')
         last_name: @get('last_name')
         email: @get('email')
         phone: @get('phone')
+        group: group
 
-      # contact.get('groups').then (groups) ->
-      #   groups.pushObject(group)
-
-      # console.log group
-      # console.log contact
+      console.log contact
 
       contact.save().then (c) =>
-        group = @get('controllers.group.content')
-
-        group.get('contacts').then (contacts) =>
-          contacts.pushObject(c)
-
-        group.get('contacts').then (cs) =>
-          console.log cs
-
-        group.save().then (g) =>
+        group.reload().then (g) =>
           @transitionToRoute('contacts')
 
     cancel: ->

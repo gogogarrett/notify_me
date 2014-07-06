@@ -4,7 +4,8 @@ NotifyMe.Contact = DS.Model.extend
   email: DS.attr('string')
   phone: DS.attr('string')
 
-  groups: DS.hasMany('group', async: true)
+  group: DS.belongsTo('group')
+  # groups: DS.hasMany('group', async: true)
 
 
   fullName: (->

@@ -4,6 +4,11 @@ class GroupsController < ApplicationController
     render json: Group.all
   end
 
+  def show
+    group = Group.find(params[:id])
+    render json: group
+  end
+
   def create
     group = Group.new(group_params)
 

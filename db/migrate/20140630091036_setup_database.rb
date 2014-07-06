@@ -14,6 +14,7 @@ class SetupDatabase < ActiveRecord::Migration
       t.string :phone
       t.string :email
       t.references :program
+      t.references :group
 
       t.timestamps
     end
@@ -21,26 +22,6 @@ class SetupDatabase < ActiveRecord::Migration
     create_table :groups do |t|
       t.string :name
       t.references :program
-
-      t.timestamps
-    end
-
-    create_table :contact_groups do |t|
-      t.integer :group_id
-      t.integer :contact_id
-
-      t.timestamps
-    end
-
-    create_table :messages do |t|
-      t.text :body
-
-      t.timestamps
-    end
-
-    create_table :group_messages do |t|
-      t.integer :group_id
-      t.integer :message_id
 
       t.timestamps
     end
