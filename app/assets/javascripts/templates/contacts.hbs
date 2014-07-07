@@ -1,4 +1,4 @@
-{{!-- <h2>Contacts</h2>
+<h2>Contacts</h2>
 
 <table>
   <thead>
@@ -8,7 +8,7 @@
     <th>Phone</th>
   </thead>
   <tbody>
-    {{#each contact in controller}}
+    {{#each contact in contacts}}
       <tr>
         <td> {{contact.first_name}} </td>
         <td> {{contact.last_name}} </td>
@@ -19,7 +19,4 @@
   </tbody>
 </table>
 
-{{#link-to 'contacts.new'}} New contact {{/link-to}}
- --}}
-
- {{outlet}}
+{{#link-to 'group.contact.new'}} New contact {{/link-to}}

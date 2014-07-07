@@ -5,26 +5,15 @@ NotifyMe.Router.reopen
   rootURL: '/'
 
 NotifyMe.Router.map ()->
-  # @resource 'contacts', ->
-  #   @route 'show', path: '/:contact_id'
-  #   @route 'new'
 
-  @resource 'groups', ->
-    @resource 'group', path: '/:group_id', ->
-      @resource 'contacts', ->
-        @route 'new'
-        @route 'contact', path: '/:contact_id'
+  @resource 'groups'
+  @route 'group.new', path: '/groups/new'
 
-  # @resource 'programs', ->
-  #   @route 'new'
-  #   @route 'edit', path: '/:program_id/edit'
-  #   @resource 'program', path: '/:program_id', ->
-  #     @resource 'contacts', ->
-  #       @route 'new'
-  #       @route 'contact', path: '/:contact_id'
+  @resource 'group', path: '/groups/:id', ->
+    @route 'edit'
 
-  # @resource "post", path: "/post/:post_id", ->
-  #   @route "edit"
-  #   @resource "comments", ->
-  #     @route "new"
+    @resource 'contacts'
+    @route 'contact.new', path: '/contacts/new'
 
+    @resource 'contact', path: '/contacts/:id', ->
+      @route 'edit'

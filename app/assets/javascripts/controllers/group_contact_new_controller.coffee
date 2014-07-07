@@ -1,11 +1,9 @@
-NotifyMe.ContactsNewController = Ember.ObjectController.extend
+NotifyMe.GroupContactNewController = Ember.ObjectController.extend
   needs: ['group']
 
   actions:
     save: ->
       group = @get('controllers.group.content')
-
-      console.log group
 
       contact = @content.setProperties
         first_name: @get('first_name')
@@ -13,8 +11,6 @@ NotifyMe.ContactsNewController = Ember.ObjectController.extend
         email: @get('email')
         phone: @get('phone')
         group: group
-
-      console.log contact
 
       contact.save().then (c) =>
         group.reload().then (g) =>
